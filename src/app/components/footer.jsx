@@ -15,10 +15,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-300 pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-gray-900 text-gray-300 pt-20 pb-10 overflow-hidden">
       {/* Floating Glow Accents */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 -right-32 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-500/10 blur-3xl"></div>
+      <div className="absolute bottom-0 -right-32 w-80 h-80 bg-blue-400/10 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
@@ -28,10 +28,12 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-blue-600 flex items-center justify-center shadow-lg">
               <HeartPulse className="text-white w-6 h-6" />
             </div>
-            <h2 className="text-2xl font-bold text-white">Fatima Medical Center</h2>
+            <h2 className="text-2xl font-bold text-white">
+              Fatima Medical Center
+            </h2>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Providing world-class healthcare with compassion, innovation, and
@@ -47,11 +49,31 @@ export default function Footer() {
         >
           <h4 className="text-lg font-semibold text-white mb-5">Quick Links</h4>
           <ul className="space-y-3 text-sm">
-            <li><a href="/about" className="hover:text-blue-400 transition">About Us</a></li>
-            <li><a href="/services" className="hover:text-blue-400 transition">Services</a></li>
-            <li><a href="/doctors" className="hover:text-blue-400 transition">Find a Doctor</a></li>
-            <li><a href="/appointment" className="hover:text-blue-400 transition">Book Appointment</a></li>
-            <li><a href="/contact" className="hover:text-blue-400 transition">Contact</a></li>
+            <li>
+              <a href="/about" className="hover:text-blue-400 transition">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/services" className="hover:text-blue-400 transition">
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="/doctors" className="hover:text-blue-400 transition">
+                Find a Doctor
+              </a>
+            </li>
+            <li>
+              <a href="/appointment" className="hover:text-blue-400 transition">
+                Book Appointment
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-blue-400 transition">
+                Contact
+              </a>
+            </li>
           </ul>
         </motion.div>
 
@@ -84,7 +106,9 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
         >
-          <h4 className="text-lg font-semibold text-white mb-5">Stay Updated</h4>
+          <h4 className="text-lg font-semibold text-white mb-5">
+            Stay Updated
+          </h4>
           <p className="text-sm text-gray-400 mb-4">
             Subscribe to our newsletter for health tips & updates.
           </p>
@@ -92,11 +116,11 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Your Email"
-              className="flex-1 px-4 py-3 rounded-xl bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none"
+              className="flex-1 px-4 py-3 bg-gray-800 text-white placeholder-gray-400 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl text-white font-semibold hover:scale-105 transition shadow-lg"
+              className="px-6 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg"
             >
               Subscribe
             </button>
@@ -109,12 +133,23 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} Fatima Medical Center. All Rights Reserved.</p>
+        <p>
+          © {new Date().getFullYear()} Fatima Medical Center. All Rights
+          Reserved.
+        </p>
         <div className="flex gap-5">
-          <a href="#" className="hover:text-blue-400"><Facebook size={18} /></a>
-          <a href="#" className="hover:text-blue-400"><Twitter size={18} /></a>
-          <a href="#" className="hover:text-blue-400"><Instagram size={18} /></a>
-          <a href="#" className="hover:text-blue-400"><Linkedin size={18} /></a>
+          <a href="#" className="hover:text-blue-400">
+            <Facebook size={18} />
+          </a>
+          <a href="#" className="hover:text-blue-400">
+            <Twitter size={18} />
+          </a>
+          <a href="#" className="hover:text-blue-400">
+            <Instagram size={18} />
+          </a>
+          <a href="#" className="hover:text-blue-400">
+            <Linkedin size={18} />
+          </a>
         </div>
       </div>
     </footer>

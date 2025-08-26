@@ -65,8 +65,12 @@ export default function ServicesSection() {
 
   return (
     <section className="w-full overflow-x-hidden relative py-20">
-      {/* Gradient background (subtle blue theme) */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-blue-50" />
+      {/* ✅ Fixed background image with overlay */}
+      <div
+        className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: "url('/backgrounds/hospital-bg.jpg')" }} // replace with your image
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/90" />
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Heading */}
@@ -76,7 +80,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+            className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
           >
             Our Departments & Services
           </motion.h2>
@@ -85,7 +89,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-4 max-w-2xl text-lg text-gray-600 leading-relaxed"
+            className="mt-4 max-w-2xl text-lg text-slate-300 leading-relaxed"
           >
             Trusted care backed by expertise, compassion, and innovation — designed for your health and well-being.
           </motion.p>
@@ -98,11 +102,11 @@ export default function ServicesSection() {
             onClick={scrollPrev}
             disabled={prevDisabled}
             aria-label="Previous services"
-            className={`hidden sm:flex items-center justify-center h-11 w-11 rounded-full backdrop-blur bg-white/90 ring-1 ring-blue-100 shadow-md transition enabled:hover:scale-105 ${
+            className={`hidden sm:flex items-center justify-center h-11 w-11 rounded-full backdrop-blur bg-slate-900/70 ring-1 ring-slate-700 shadow-md transition enabled:hover:scale-105 ${
               prevDisabled ? "opacity-40 cursor-not-allowed" : "opacity-100"
             }`}
           >
-            <ChevronLeft className="h-5 w-5 text-blue-600" />
+            <ChevronLeft className="h-5 w-5 text-cyan-400" />
           </button>
 
           {/* Embla viewport */}
@@ -117,37 +121,37 @@ export default function ServicesSection() {
                   transition={{ duration: 0.45, delay: idx * 0.03 }}
                   className="flex-[0_0_auto] min-w-[280px] sm:min-w-[320px] max-w-sm"
                 >
-                  <div className="group h-full rounded-2xl border border-blue-100 bg-white/80 backdrop-blur-xl shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300">
+                  <div className="group h-full rounded-2xl border border-slate-700 bg-slate-800/70 backdrop-blur-xl shadow-sm hover:shadow-xl hover:border-slate-600 transition-all duration-300">
                     {/* Top Accent Bar */}
-                    <div className="h-1 rounded-t-2xl bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500" />
+                    <div className="h-1 rounded-t-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" />
 
                     <div className="p-6">
                       <div className="flex items-center justify-between">
-                        <div className="inline-flex items-center justify-center rounded-xl p-3 bg-blue-50 text-blue-700 ring-1 ring-blue-100">
+                        <div className="inline-flex items-center justify-center rounded-xl p-3 bg-slate-700 text-cyan-400 ring-1 ring-slate-600">
                           {s.icon}
                         </div>
                         <motion.div
-                          className="h-2 w-10 rounded-full bg-blue-100"
+                          className="h-2 w-10 rounded-full bg-slate-600"
                           whileHover={{ width: 44 }}
                           transition={{ type: "spring", stiffness: 200, damping: 14 }}
                         />
                       </div>
 
-                      <h3 className="mt-5 text-xl font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
+                      <h3 className="mt-5 text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
                         {s.title}
                       </h3>
-                      <p className="mt-3 text-[15px] text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      <p className="mt-3 text-[15px] text-slate-300 leading-relaxed group-hover:text-slate-200 transition-colors">
                         {s.desc}
                       </p>
 
                       <div className="mt-6 flex items-center justify-between">
                         <Link
                           href={`#${s.id}`}
-                          className="text-sm font-semibold text-blue-600 hover:text-indigo-600 transition-colors"
+                          className="text-sm font-semibold text-cyan-400 hover:text-blue-400 transition-colors"
                         >
                           Learn more →
                         </Link>
-                        <div className="text-xs font-medium text-gray-400">
+                        <div className="text-xs font-medium text-slate-500">
                           #{String(idx + 1).padStart(2, "0")}
                         </div>
                       </div>
@@ -163,11 +167,11 @@ export default function ServicesSection() {
             onClick={scrollNext}
             disabled={nextDisabled}
             aria-label="Next services"
-            className={`hidden sm:flex items-center justify-center h-11 w-11 rounded-full backdrop-blur bg-white/90 ring-1 ring-blue-100 shadow-md transition enabled:hover:scale-105 ${
+            className={`hidden sm:flex items-center justify-center h-11 w-11 rounded-full backdrop-blur bg-slate-900/70 ring-1 ring-slate-700 shadow-md transition enabled:hover:scale-105 ${
               nextDisabled ? "opacity-40 cursor-not-allowed" : "opacity-100"
             }`}
           >
-            <ChevronRight className="h-5 w-5 text-blue-600" />
+            <ChevronRight className="h-5 w-5 text-cyan-400" />
           </button>
         </div>
 
@@ -175,17 +179,17 @@ export default function ServicesSection() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/services"
-            className="group inline-flex items-center gap-2 text-blue-600 hover:text-indigo-600 font-semibold text-lg"
+            className="group inline-flex items-center gap-2 text-cyan-400 hover:text-blue-400 font-semibold text-lg"
           >
             View all services
-            <span className="h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-16" />
+            <span className="h-[2px] w-0 bg-cyan-400 transition-all duration-300 group-hover:w-16" />
           </Link>
         </div>
       </div>
 
       {/* Floating blue glow accents */}
-      <div className="pointer-events-none absolute -z-10 -top-20 -right-10 h-56 w-56 rounded-full bg-blue-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute -z-10 bottom-0 -left-10 h-64 w-64 rounded-full bg-indigo-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute -z-10 -top-20 -right-10 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl" />
+      <div className="pointer-events-none absolute -z-10 bottom-0 -left-10 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl" />
     </section>
   );
 }

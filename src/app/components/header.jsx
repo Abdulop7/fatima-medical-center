@@ -119,9 +119,8 @@ export default function Navbar() {
       </AnimatePresence>
 
       <nav
-        className={`fixed md:p-6 p-4 w-full z-50 duration-500 transition-all ${
-          scrolled ? "bg-white shadow-lg" : "bg-transparent"
-        }`}
+        className={`fixed md:p-6 p-4 w-full z-50 duration-500 transition-all ${scrolled ? "bg-white shadow-lg" : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* ✅ Desktop Menu (hidden on mobile) */}
@@ -130,11 +129,10 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
-                className={`transition-all relative after:block after:h-[2px] after:w-0 after:bg-blue-600 ${linkClass("/")} after:transition-all hover:after:w-full ${
-                  scrolled
+                className={`transition-all relative after:block after:h-[2px] after:w-0 after:bg-blue-600 ${linkClass("/")} after:transition-all hover:after:w-full ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 Home
               </Link>
@@ -147,11 +145,10 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center ${linkClass("/departments")} transition-all ${
-                  scrolled
+                className={`flex items-center ${linkClass("/departments")} transition-all ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 Departments <FiChevronDown className="ml-1" />
               </button>
@@ -191,11 +188,10 @@ export default function Navbar() {
             <li>
               <Link
                 href="/doctors"
-                className={`transition-all relative ${linkClass("/doctors")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${
-                  scrolled
+                className={`transition-all relative ${linkClass("/doctors")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 Doctors
               </Link>
@@ -208,11 +204,10 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`flex items-center ${linkClass("/services")} transition-all ${
-                  scrolled
+                className={`flex items-center ${linkClass("/services")} transition-all ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 Services <FiChevronDown className="ml-1" />
               </button>
@@ -252,11 +247,10 @@ export default function Navbar() {
             <li>
               <Link
                 href="/about"
-                className={`transition-all relative ${linkClass("/about")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${
-                  scrolled
+                className={`transition-all relative ${linkClass("/about")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 About Us
               </Link>
@@ -266,11 +260,10 @@ export default function Navbar() {
             <li>
               <Link
                 href="/contact"
-                className={`transition-all relative ${linkClass("/contact")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${
-                  scrolled
+                className={`transition-all relative ${linkClass("/contact")} after:block after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all hover:after:w-full ${scrolled
                     ? "text-gray-800 hover:text-blue-700"
                     : "text-gray-900 hover:text-blue-600"
-                }`}
+                  }`}
               >
                 Contact
               </Link>
@@ -281,17 +274,21 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <Link
               href="/appointment"
-              className="px-5 py-2.5 bg-blue-500 text-white rounded-full font-semibold hover:bg- transition shadow-md"
+              className="px-6 py-3 
+               text-blue-600 rounded-2xl font-semibold 
+               shadow-lg  transition-all duration-300 
+               hover:scale-105 ring-2 hover:bg-blue-600 hover:text-white"
             >
               Emergency
             </Link>
           </div>
 
+
           {/* ✅ Mobile Menu Button */}
           <div className="md:hidden flex items-center justify-between w-full" >
             <div>
 
-            <Image src={logo} height={100} width={120} alt="Logo" />
+              <Image src={logo} height={100} width={120} alt="Logo" />
             </div>
 
             {menuOpen ? (
@@ -337,17 +334,15 @@ export default function Navbar() {
                 >
                   Services
                   <FiChevronDown
-                    className={`transition-transform duration-300 ${
-                      activeDropdown === "services" ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-300 ${activeDropdown === "services" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    activeDropdown === "services"
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${activeDropdown === "services"
                       ? "max-h-40 opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="pl-4 flex flex-col space-y-2 mt-2 text-black">
                     <a href="#emergency">Emergency Care</a>
@@ -366,17 +361,15 @@ export default function Navbar() {
                 >
                   Departments
                   <FiChevronDown
-                    className={`transition-transform duration-300 ${
-                      activeDropdown === "departments" ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-300 ${activeDropdown === "departments" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    activeDropdown === "departments"
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${activeDropdown === "departments"
                       ? "max-h-40 opacity-100"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="pl-4 flex flex-col space-y-2 mt-2 text-black">
                     <a href="#cardiology">Cardiology</a>
@@ -396,9 +389,19 @@ export default function Navbar() {
               <Link href="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
-              <Link href="/appointment" onClick={() => setMenuOpen(false)}>
-                Emergency
-              </Link>
+
+              <div className="self-center items-center gap-3">
+                <Link
+                  href="/appointment"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 
+               text-white rounded-2xl font-semibold 
+               shadow-lg hover:shadow-xl transition-all duration-300 
+               hover:scale-105 hover:from-blue-600 hover:to-indigo-700"
+                >
+                  Emergency
+                </Link>
+              </div>
             </div>
           </div>
         )}

@@ -61,6 +61,20 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 relative overflow-hidden">
+      {/* ✅ Background image (fixed) */}
+<div
+  className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
+  style={{ backgroundImage: "url('/backgrounds/stroke-gray.jpg')" }}
+></div>
+
+{/* ✅ Subtle overlay for contrast */}
+<div className="absolute inset-0 -z-10 bg-white/50 backdrop-blur-[2px]"></div>
+
+
+      {/* ✅ Accent blobs */}
+      <div className="absolute -top-20 -right-28 w-80 sm:w-96 h-80 sm:h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 -left-28 w-72 sm:w-96 h-72 sm:h-96 bg-indigo-300/30 rounded-full blur-3xl"></div>
+
       <div className="text-center mb-16 relative z-10">
         <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium rounded-full bg-blue-100 text-blue-700">
           Patient Voices
@@ -140,11 +154,6 @@ export default function Testimonials() {
           <ChevronRight className="w-6 h-6 text-gray-700" />
         </button>
       </div>
-
-      {/* ✅ Matching gradient + glow accents */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-50 via-white to-white"></div>
-      <div className="absolute -top-20 -right-28 w-80 sm:w-96 h-80 sm:h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 -left-28 w-72 sm:w-96 h-72 sm:h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
     </section>
   );
 }
