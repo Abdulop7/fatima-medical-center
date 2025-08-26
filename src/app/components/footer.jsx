@@ -28,12 +28,11 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-blue-600 flex items-center justify-center shadow-lg">
-              <HeartPulse className="text-white w-6 h-6" />
-            </div>
-            <h2 className="text-2xl font-bold text-white">
-              Fatima Medical Center
-            </h2>
+            <img
+                src="/logo.png"
+                alt="Hospital Automanger"
+                className="h-30 w-auto object-contain brightness-0 invert"
+              />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
             Providing world-class healthcare with compassion, innovation, and
